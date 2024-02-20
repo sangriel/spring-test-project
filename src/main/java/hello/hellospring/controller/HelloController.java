@@ -10,6 +10,9 @@ public class HelloController {
     @GetMapping("hello")
     public String hello(Model model) {
         model.addAttribute("data","hello");
+
+        //컨틀롤러에서 문자값 리턴시 viewresolver가 화면을 찾아서 처리한다.
+        //hello.html
         return "hello";
     }
 }
