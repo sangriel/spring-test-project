@@ -42,6 +42,7 @@ public class HelloController {
         Hello hello = new Hello();
         hello.setName(name);
         //이렇게 하면 결과로 json format으로 떨어짐
+        //@ResponsBody가 붙어 있으면 view를 찾지 않고 HttpMessageConverter(Json Converter, String Converter)를 통해서 반환됨
         return hello;
     }
 
