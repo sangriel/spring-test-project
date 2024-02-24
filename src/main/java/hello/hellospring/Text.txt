@@ -14,3 +14,6 @@ setter를 통한 의존성 주입, -> encapsulation 위반 때문에 안쓴다.
 //5차시
 참고사항
  컨트롤러가 정적 파일보다 우선순위가 높다. ?// viewresolver가 찾는 우선순위를 말하는 거였음
+
+
+왜 memberForm은 controller가 아닌데 controller 패키지에 넣음?
