@@ -3,7 +3,7 @@ package hello.hellospring;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication // -> 애가 선언되어 있는 디렉토리 아래로만 어노테이션을 붙였을때 컴포넌트 스캔을 지원함.
 public class HelloSpringApplication {
 
 	// 스프링 부트는 톰캣을 내장하고 있기 때문에, 자체적을 띄워주면서 스프링 부트가 같이 올라온다.
