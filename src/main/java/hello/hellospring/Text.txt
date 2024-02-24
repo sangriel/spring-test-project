@@ -9,4 +9,8 @@ public 생성자 -> 의존성 주입
 setter를 통한 의존성 주입, -> encapsulation 위반 때문에 안쓴다.
 
 실무에서 상황에 따라 구현 클래스를 변경해야 하면 설정을 통해 스프링 빈을 등록한다. -> 요게 좀 중요하다고 함
--> 그냥 interface를 통한 wrapping의 개념 
+-> 그냥 interface를 통한 wrapping의 개념
+
+//5차시
+참고사항
+ 컨트롤러가 정적 파일보다 우선순위가 높다. ?// viewresolver가 찾는 우선순위를 말하는 거였음
