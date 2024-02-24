@@ -1,0 +1,12 @@
+
+//4차시
+
+@Autowired private somthing s; -> 필드 주입, 매우 비추 하는 방법 컨트롤하기가 어렵다고 함
+
+@AutoWired
+public 생성자 -> 의존성 주입
+
+setter를 통한 의존성 주입, -> encapsulation 위반 때문에 안쓴다.
+
+실무에서 상황에 따라 구현 클래스를 변경해야 하면 설정을 통해 스프링 빈을 등록한다. -> 요게 좀 중요하다고 함
+-> 그냥 interface를 통한 wrapping의 개념 
