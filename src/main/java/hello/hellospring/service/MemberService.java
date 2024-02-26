@@ -41,7 +41,7 @@ public class MemberService {
     }
 
     public Optional<Member> findOne(Long memberId){
-        //findone? 진짜로?
+        //findone? 진짜로? // 6차시에 드디어 풀렸다. JPA repository에 함수명이 이렇게 선언되어 있었네
         return memberRepository.findById(memberId);
     }
 

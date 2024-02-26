@@ -14,31 +14,37 @@ import javax.swing.*;
 public class SpringConfig {
 
 //    private DataSource dataSource;
-
 //    @Autowired
 //    public SpringConfig(DataSource dataSource){
 //        this.dataSource = dataSource;
 //    }
 
-    private EntityManager em;
+//    private EntityManager em;
+//    @Autowired
+//    public SpringConfig(EntityManager em){
+//        this.em = em;
+//    }
+    //jpa 용도
+
+    private final MemberRepository memberRepository;
 
     @Autowired
-    public SpringConfig(EntityManager em){
-        this.em = em;
+    public SpringConfig(MemberRepository memberRepository){
+        this.memberRepository = memberRepository;
     }
 
     @Bean
     public MemberService memberService() {
-        return new MemberService(memberRepository());
+        return new MemberService(this.memberRepository);
     }
 
-    @Bean
-    public MemberRepository memberRepository() {
-        //return new MemoryMemberRepository();
-//        return new JDBCMemberRepository(dataSource);
-//        return new JdbcTemplateMemberRepository(dataSource);
-        return new JpaMemberRepository(em);
-    }
+//    @Bean
+//    public MemberRepository memberRepository() {
+//        //return new MemoryMemberRepository();
+////        return new JDBCMemberRepository(dataSource);
+////        return new JdbcTemplateMemberRepository(dataSource);
+////        return new JpaMemberRepository(em);
+//    }
 
 
 }
