@@ -17,3 +17,31 @@ setter를 통한 의존성 주입, -> encapsulation 위반 때문에 안쓴다.
 
 
 왜 memberForm은 controller가 아닌데 controller 패키지에 넣음?
+
+//6차시
+스프링 컨테이너가 디펜덴시 인젝션 같은 것들을 통해서 객체 지향식 코딩을 할 수 있도록 많이 도와준다고 함
+가련 인터페이스를 가지고 구현체 바꿔치기하는 다형성 처럼
+
+
+@SpringBootTest -> 스프링 컨테이너까지 같이 테스트를 돌릴 수 있게끔 하는 어노테이션
+@Transactional -> 데이터베이스 연동하면서 테스트할때 자동 롤백 해주는 어노테이션
+
+테스트케이스는 사실 컨테이너까지 하는 통합 테스트 보다 자바만 테스트하듯 단위 테스트 지향적으로 하는 것을 추천함
+
+spring.jpa.show-sql=true // 데이터베이스 동작하는 방식을 보여줄거냐?
+spring.jpa.hibernate.ddl-auto=none // 알아서 모델 객체를 보고 스프링에서 데이터베이스 생성할지 말지 결정하는 거
+
+jpa를 쓰려면 일단 @entity로 매핑을 해야됨
+
+
+주의점 -> jpa를 쓸때는 항상 service 계층에 @Transactional 어노테이션을 붙여 놔야 한다.
+클라스에다가 아니라 필요한 함수에만 어노테이션을 붙여도 됨
+
+
+스프링 데이터 jpa가 인터페이스를 보고 spring bean을 자동으로 만들어서 알아서 올림
+spring-data가 어떻게 구현체를 만드냐? -> JpaRepository에 들어가면 보면 이미 findByAll, findById 등등이 전부 구현되어 있음
+따라서 인터페이스에서 함수명만 통일하면 가져다가 쓸 수 있는 거임
+
+인터페이스 이름만으로 sql문을 짤수 있음
+예를 들어 findByNameAndIdAnd , findByNameOrId 이런식으로 가능하다고 함
+
