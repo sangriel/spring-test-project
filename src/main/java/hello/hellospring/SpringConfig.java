@@ -1,5 +1,6 @@
 package hello.hellospring;
 
+import hello.hellospring.aop.TimeTraceAOP;
 import hello.hellospring.repository.*;
 import hello.hellospring.service.MemberService;
 import jakarta.persistence.EntityManager;
@@ -37,6 +38,12 @@ public class SpringConfig {
     public MemberService memberService() {
         return new MemberService(this.memberRepository);
     }
+
+//    @Bean
+//    public TimeTraceAOP timeTraceAOP() {
+//        return new TimeTraceAOP();
+//    }
+//    -> 순환참조 일어나면서 앱이 뻗음 why?
 
 //    @Bean
 //    public MemberRepository memberRepository() {
